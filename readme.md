@@ -15,6 +15,4 @@
 
     php artisan db:seed
 
-    php artisan serve
-
     По умолчанию создан пользователь с именем admin@ad.com и паролем admin
