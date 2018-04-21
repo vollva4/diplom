@@ -17,7 +17,7 @@
     <label>Ваш email: <input type="email" name="authors_email" required></label>
     <label>Ваше имя: <input name="author" required></label>
     <hr>
-    <label>Краткое описание. <br><textarea rows="2" cols="50" name="description"></textarea>
+    <label>Краткое описание. <br><textarea rows="2" cols="50" name="description" required></textarea>
     <hr>
     <label>Вопрос: <textarea rows="10" cols="50" name="question" required></textarea></label>
     <input class="btn btn-primary" type="submit" value="Создать вопрос">

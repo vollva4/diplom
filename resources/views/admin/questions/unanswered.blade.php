@@ -9,9 +9,8 @@
 	@slot('parent') Главная @endslot
 	@slot('active') Вопросы без ответа @endslot
 	@endcomponent
-
+	
 <hr>
-
 <a href="{{route('admin.question.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o"></i>Создать вопрос</a>
 <table class="table table-striped">
 	<thead>
@@ -53,12 +52,6 @@
 			</td>
 		</tr>
 	</tfoot>
-	
-
 </table>
-
-
-
-
 </div>
 @endsection

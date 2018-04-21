@@ -16,5 +16,4 @@
     <input class="btn btn-primary" type="submit" value="Создать тему">
 </form>
 </div>
-
 @endsection

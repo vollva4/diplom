@@ -36,7 +36,17 @@ class HomeController extends Controller
     }
     public function storeQuestion(Request $request)
     {
+        $this->validate($request, [
+            'category_id' => 'required',
+            'authors_email' => 'required|string|email|max:255',
+            'author' => 'required|string|max:255',
+            'authors_email' => 'required|string|email|max:255',
+            'description' => 'required|string|max:255',
+            'question' => 'required|string'
+            
+        ]);
         Question::create($request->all());
+
         return redirect()->route('home');
     }
 }

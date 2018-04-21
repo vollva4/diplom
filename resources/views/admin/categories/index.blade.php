@@ -59,9 +59,5 @@
 	</tfoot>
 
 </table>
-
-
-
-
 </div>
 @endsection

@@ -23,4 +23,3 @@ class Category extends Model
         return $query->orderBy('created_at', 'desc')->take($count)->get();
     }   
 }
-

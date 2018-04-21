@@ -17,5 +17,4 @@
     <input class="btn btn-primary" type="submit" value="Сохранить">
 </form>
 </div>
-
 @endsection

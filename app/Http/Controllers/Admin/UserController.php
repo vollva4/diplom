@@ -101,6 +101,7 @@ class UserController extends Controller
         $user->email = $request['email'];
         $request['password'] == null ?: $user->password = bcrypt($request['password']);
         $user->save();
+
         return redirect()->route('admin.user.index');
     }
 
@@ -113,6 +114,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
        $user->delete();
+
         return redirect()->route('admin.user.index');
     }
 }

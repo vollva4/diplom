@@ -41,7 +41,17 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'category_id' => 'required',
+            'authors_email' => 'required|string|email|max:255',
+            'author' => 'required|string|max:255',
+            'authors_email' => 'required|string|email|max:255',
+            'description' => 'required|string|max:255',
+            'question' => 'required|string'
+            
+        ]);
         Question::create($request->all());
+
         return redirect()->route('admin.question.index');
     }
 
@@ -65,8 +75,8 @@ class QuestionController extends Controller
     public function edit(Question $question)
     {
          return view('admin.questions.edit',[
-        'question'=>$question,
-        'categories' => Category::all()
+            'question'=>$question,
+            'categories' => Category::all()
        ]);
     }
 
@@ -80,6 +90,7 @@ class QuestionController extends Controller
     public function update(Request $request, Question $question)
     {
         $question->update($request->all());
+
         return redirect()->route('admin.question.index');    
     }
 
@@ -91,14 +102,15 @@ class QuestionController extends Controller
      */
     public function destroy(Question $question)
     {
-         $question->delete();
+        $question->delete();
+
         return redirect()->route('admin.question.index');
     }
      
      public function hide(Question $question)
     {
         if ($question->published == 0) {
-            $status = 1;
+        	$status = 1;
         } 
         else {
             $status = 0;
@@ -107,6 +119,7 @@ class QuestionController extends Controller
         $question->update([
             'published' => $status,
         ]);
+
         return redirect()->route('admin.question.index');
     }
     public function answer(Question $question)
