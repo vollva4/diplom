@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="container">
-	@component('admin.components.breadcrumbs')
-	@slot('title') Создание категории @endslot
-	@slot('parent') Главная @endslot
-	@slot('active') Категории @endslot
-	@endcomponent
+    @component('admin.components.breadcrumbs')
+    @slot('title') Создание категории @endslot
+    @slot('parent') Главная @endslot
+    @slot('active') Категории @endslot
+    @endcomponent
 
-	<hr>
+    <hr>
 <form class="form-horizontal" action="{{ route('admin.category.store') }}" method="post">
     {{ csrf_field() }}
     <label>Название темы: <input name="name"></label>

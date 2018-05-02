@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="container">
-	@component('admin.components.breadcrumbs')
-	@slot('title') Создание вопроса @endslot
-	@slot('parent') Главная @endslot
-	@slot('active') Вопросы @endslot
-	@endcomponent
+    @component('admin.components.breadcrumbs')
+    @slot('title') Создание вопроса @endslot
+    @slot('parent') Главная @endslot
+    @slot('active') Вопросы @endslot
+    @endcomponent
 
-	<hr>
+    <hr>
 <form class="form-horizontal" action="{{ route('admin.question.store') }}" method="post">
     {{ csrf_field() }}
     <label>Тема вопроса:

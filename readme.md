@@ -9,10 +9,10 @@
 
     composer install
 
-    Переименовать файл .env.example в .env, настроить его под свою среду
+   Переименовать файл .env.example в .env, настроить его под свою среду
 
     php artisan migrate
 
     php artisan db:seed
 
-    По умолчанию создан пользователь с именем admin и паролем admin
+   По умолчанию создан пользователь с именем admin и паролем admin

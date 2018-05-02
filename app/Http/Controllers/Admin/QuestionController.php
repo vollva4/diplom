@@ -9,16 +9,16 @@ use App\Http\Controllers\Controller;
 
 class QuestionController extends Controller
 {
-    /**
+   /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+      */
     public function index()
     {
-       return view('admin.questions.index', [
-        'questions'=>Question::orderBy('created_at', 'desc')->paginate(10)
-       ]);
+        return view('admin.questions.index', [
+            'questions'=>Question::orderBy('created_at', 'desc')->paginate(10)
+        ]);
     }
 
     /**
@@ -106,11 +106,11 @@ class QuestionController extends Controller
 
         return redirect()->route('admin.question.index');
     }
-     
-     public function hide(Question $question)
+    
+    public function hide(Question $question)
     {
         if ($question->published == 0) {
-        	$status = 1;
+            $status = 1;
         } 
         else {
             $status = 0;
@@ -126,7 +126,7 @@ class QuestionController extends Controller
     {
          return view('admin.questions.answer',[
         'question'=>$question,
-       ]);
+        ]);
     }
      public function unanswered()
     {

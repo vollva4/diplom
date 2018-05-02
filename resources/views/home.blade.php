@@ -1,31 +1,29 @@
 @extends('layouts.app')
 @section('content')
-@if(isset($category)) 
- <h1 class="cards-section-header text-cards-section text-default">Тема: {{ $category->name }}</h1>
-          <div class="cards-inner-container">
-            @foreach($questions as $question)
-              @if($question->published == 1)
-              <div class="card">
-                <hr>
-                <p class="q-and-a"><strong><h3>Вопрос:</h3>{{ $question->question }}</strong>
-                  <br>
-                  <br>
-                  @if($question->answer != null)
-                  <h3>Ответ:</h3>
-                  {{ $question->answer }}
-                  @else
-                  <h3>Ответ:</h3>
-                  Ответа пока нет.
-                  @endif  
-                </p>
-              </div>
-              @endif
-          </div>
-        @endforeach
-      </div>
+@if(isset($category))
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1 class="panel-title"><strong>Тема: {{ $category->name }}</strong></h1>
     </div>
+    <div class="panel-body">
+            @foreach($questions as $question)
+                @if($question->published == 1)
+                        <h4>Вопрос:</h4>{{ $question->question }}
+                        @if($question->answer != null)
+                            <h4>Ответ:</h4>
+                            {{ $question->answer }}
+                            <hr>
+                        @else
+                            <h4>Ответ:</h4>
+                            Ответа пока нет.
+                            <hr>
+                        @endif
+                @endif
+            @endforeach
+    </div>
+</div>
     <ul class="pagination pull-right">
-		{{$questions->links()}}
-	</ul>
-@endif    
+            {{$questions->links()}}
+    </ul>
+@endif
 @endsection
