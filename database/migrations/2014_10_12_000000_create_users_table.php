@@ -11,6 +11,7 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
+    
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
@@ -28,6 +29,7 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
+    
     public function down()
     {
         Schema::dropIfExists('users');

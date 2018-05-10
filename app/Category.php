@@ -12,12 +12,14 @@ class Category extends Model
      *
      * @var array
      */
-     protected $fillable = ['name'];
+    
+    protected $fillable = ['name'];
 
     public function question()
     {
         return $this->hasMany('App\Question');
     }
+    
     public function scopeLastCategories($query, $count)
     {
         return $query->orderBy('created_at', 'desc')->take($count)->get();

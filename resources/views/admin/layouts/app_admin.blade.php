@@ -23,7 +23,7 @@
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=" #app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -42,7 +42,7 @@
                         <li >
                             <a href="{{route('admin.index')}}" role="button" aria-expanded="false">Панель инфо</a>
                         </li>
-                         <li class="dropdown">
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Меню</a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{route('admin.category.index')}}">Темы</a></li>
@@ -69,7 +69,7 @@
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                document.getElementById('logout-form').submit();">
                                             Выйти
                                         </a>
 

@@ -18,7 +18,7 @@ class DashboardController extends Controller
             'count_categories' => Category::count(),
             'count_questions' => Question::count(),
             'count_admins' => User::count(),
-            'count_unanswered' => Question::where('answer', NULL)->count()
+            'count_unanswered' => Question::where('answer', null)->count()
         ]);
     }
 }

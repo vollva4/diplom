@@ -18,22 +18,26 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         return view('home');
     }
-     public function list(Category $category){
+    
+    public function list(Category $category){
         return view('home', [ 
             'category' => $category,         
             'questions' => $category->question()->paginate(5),
         ]);
     }
+    
     public function createQuestion()
     {
         return view('createQuestion', [
             'categories' => Category::all()
         ]);
     }
+    
     public function storeQuestion(Request $request)
     {
         $this->validate($request, [
@@ -42,8 +46,7 @@ class HomeController extends Controller
             'author' => 'required|string|max:255',
             'authors_email' => 'required|string|email|max:255',
             'description' => 'required|string|max:255',
-            'question' => 'required|string'
-            
+            'question' => 'required|string'    
         ]);
         Question::create($request->all());
 

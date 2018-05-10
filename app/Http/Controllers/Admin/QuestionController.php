@@ -14,6 +14,7 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
       */
+    
     public function index()
     {
         return view('admin.questions.index', [
@@ -26,6 +27,7 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function create()
     {
         return view('admin.questions.create', [
@@ -39,6 +41,7 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -61,6 +64,7 @@ class QuestionController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
+    
     public function show(Question $question)
     {
         //
@@ -72,6 +76,7 @@ class QuestionController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
+    
     public function edit(Question $question)
     {
          return view('admin.questions.edit',[
@@ -87,6 +92,7 @@ class QuestionController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
+    
     public function update(Request $request, Question $question)
     {
         $question->update($request->all());
@@ -100,6 +106,7 @@ class QuestionController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
+    
     public function destroy(Question $question)
     {
         $question->delete();
@@ -111,8 +118,7 @@ class QuestionController extends Controller
     {
         if ($question->published == 0) {
             $status = 1;
-        } 
-        else {
+        } else {
             $status = 0;
         }
 
@@ -122,13 +128,15 @@ class QuestionController extends Controller
 
         return redirect()->route('admin.question.index');
     }
+
     public function answer(Question $question)
     {
          return view('admin.questions.answer',[
         'question'=>$question,
         ]);
     }
-     public function unanswered()
+
+    public function unanswered()
     {
         return view('admin.questions.unanswered',[
             'questions' => Question::Unanswered()->paginate(10),

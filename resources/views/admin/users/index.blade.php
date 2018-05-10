@@ -30,7 +30,6 @@
 			<td>
 				 <form action="{{ route('admin.user.destroy', $user) }}" method="post">
                         <input class="delete" type="submit" value="Удалить Администратора">
-
                         {{ method_field('DELETE') }}
                         {{ csrf_field() }}
                     </form>

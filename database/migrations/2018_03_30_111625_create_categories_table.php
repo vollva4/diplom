@@ -11,6 +11,7 @@ class CreateCategoriesTable extends Migration
      *
      * @return void
      */
+    
     public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
@@ -25,6 +26,7 @@ class CreateCategoriesTable extends Migration
      *
      * @return void
      */
+    
     public function down()
     {
         Schema::dropIfExists('categories');

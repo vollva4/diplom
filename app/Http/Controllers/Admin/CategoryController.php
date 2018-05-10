@@ -25,6 +25,7 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function create()
     {
         return view('admin.categories.create');
@@ -36,10 +37,11 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    
     public function store(Request $request)
     {
         Category::create($request->all());
-
+        
         return redirect()->route('admin.category.index');
     }
 
@@ -49,6 +51,7 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
+    
     public function show(Category $category)
     {
         //
@@ -60,6 +63,7 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
+    
     public function edit(Category $category)
     {
        return view('admin.categories.edit',[
@@ -74,6 +78,7 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
+    
     public function update(Request $request, Category $category)
     {
         $category->update($request->all());

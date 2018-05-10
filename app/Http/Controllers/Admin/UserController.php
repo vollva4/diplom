@@ -12,6 +12,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         return view('admin.users.index',[
@@ -24,6 +25,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function create()
     {
          return view('admin.users.create');
@@ -35,6 +37,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -59,6 +62,7 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
+    
     public function show(User $user)
     {
         //
@@ -70,6 +74,7 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
+    
     public function edit(User $user)
     {
           return view('admin.users.edit', [
@@ -84,6 +89,7 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
+    
     public function update(Request $request, User $user)
     {
         $this->validate($request, [
@@ -97,6 +103,7 @@ class UserController extends Controller
             ],
             'password' => 'nullable|min:5|confirmed'
         ]);
+
         $user->name = $request['name'];
         $user->email = $request['email'];
         $request['password'] == null ?: $user->password = bcrypt($request['password']);
@@ -111,9 +118,10 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
+    
     public function destroy(User $user)
     {
-       $user->delete();
+        $user->delete();
 
         return redirect()->route('admin.user.index');
     }
