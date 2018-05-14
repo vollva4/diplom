@@ -66,9 +66,9 @@ class CategoryController extends Controller
     
     public function edit(Category $category)
     {
-       return view('admin.categories.edit',[
-        'category'=>$category
-       ]);
+        return view('admin.categories.edit', [
+            'category'=>$category
+        ]);
     }
 
     /**
@@ -101,7 +101,8 @@ class CategoryController extends Controller
     }
 
 
-    public function questions(Category $category){
+    public function questions(Category $category)
+    {
         return view('admin.categories.questions', [ 
             'category' => $category,         
             'questions' => $category->question()->get(),

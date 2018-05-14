@@ -28,7 +28,7 @@ class UserController extends Controller
     
     public function create()
     {
-         return view('admin.users.create');
+        return view('admin.users.create');
     }
 
     /**
@@ -50,10 +50,9 @@ class UserController extends Controller
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => bcrypt($request['password'])
-
         ]);
 
-       return redirect()->route('admin.user.index');
+        return redirect()->route('admin.user.index');
     }
 
     /**
@@ -77,7 +76,7 @@ class UserController extends Controller
     
     public function edit(User $user)
     {
-          return view('admin.users.edit', [
+        return view('admin.users.edit', [
             'user' => $user
         ]);
     }

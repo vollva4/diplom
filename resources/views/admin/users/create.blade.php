@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="container">
-	@component('admin.components.breadcrumbs')
-	@slot('title') Создание дминистратора @endslot
-	@slot('parent') Главная @endslot
-	@slot('active') Администраторы @endslot
-	@endcomponent
+    @component('admin.components.breadcrumbs')
+    @slot('title') Создание дминистратора @endslot
+    @slot('parent') Главная @endslot
+    @slot('active') Администраторы @endslot
+    @endcomponent
 
-	<div class="panel-body">
+    <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('admin.user.store') }}">
                         {{ csrf_field() }}
                     @if ($errors->any())

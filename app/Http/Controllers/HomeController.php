@@ -24,7 +24,8 @@ class HomeController extends Controller
         return view('home');
     }
     
-    public function list(Category $category){
+    public function list(Category $category)
+    {
         return view('home', [ 
             'category' => $category,         
             'questions' => $category->question()->paginate(5),

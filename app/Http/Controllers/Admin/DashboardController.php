@@ -11,7 +11,8 @@ use App\Http\Controllers\Controller;
 class DashboardController extends Controller
 {
     //Dashboard
-    public function dashboard(){
+    public function dashboard()
+    {
         return view('admin.dashboard', [
             'categories' => Category::lastCategories(5),
             'questions' => Question::Unanswered(5),

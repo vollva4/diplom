@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="container">
-	@component('admin.components.breadcrumbs')
-	@slot('title') Редактирование данных администратора @endslot
-	@slot('parent') Главная @endslot
-	@slot('active') Администраторы @endslot
-	@endcomponent
+    @component('admin.components.breadcrumbs')
+    @slot('title') Редактирование данных администратора @endslot
+    @slot('parent') Главная @endslot
+    @slot('active') Администраторы @endslot
+    @endcomponent
 
-	<div class="panel-body">
+    <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('admin.user.update', $user) }}">
                         <input type="hidden" name="_method" value="put">
                         {{ csrf_field() }}

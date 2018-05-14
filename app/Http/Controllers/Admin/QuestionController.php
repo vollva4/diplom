@@ -18,7 +18,7 @@ class QuestionController extends Controller
     public function index()
     {
         return view('admin.questions.index', [
-            'questions'=>Question::orderBy('created_at', 'desc')->paginate(10)
+            'questions' => Question::orderBy('created_at', 'desc')->paginate(10)
         ]);
     }
 
@@ -79,8 +79,8 @@ class QuestionController extends Controller
     
     public function edit(Question $question)
     {
-         return view('admin.questions.edit',[
-            'question'=>$question,
+        return view('admin.questions.edit', [
+            'question' => $question,
             'categories' => Category::all()
        ]);
     }
@@ -131,8 +131,8 @@ class QuestionController extends Controller
 
     public function answer(Question $question)
     {
-         return view('admin.questions.answer',[
-        'question'=>$question,
+        return view('admin.questions.answer',[
+            'question'=>$question,
         ]);
     }
 
